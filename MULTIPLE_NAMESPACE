@@ -1,0 +1,25 @@
+namespace MyComp.MyProject.MyApp.IPL
+{
+    class Dept
+    {
+        public void show()
+        {
+            Console.WriteLine("This is from dept class MyNameSpace namespace");
+        }
+
+        public void getFun()
+        {
+            Console.WriteLine("getFun from dept class MyNameSpace namespace");
+        }
+    }
+}
+
+class MultipleNameSpace
+{
+    public static void Main(string[] args)
+    {
+        MyComp.MyProject.MyApp.IPL.Dept d = new MyComp.MyProject.MyApp.IPL.Dept();
+        d.show();
+        d.getFun();
+    }
+}
