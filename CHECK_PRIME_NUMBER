@@ -1,0 +1,30 @@
+using System;
+
+class FindPrime
+{
+    public static bool IsPrime(int num)
+    {
+        int count = 0;
+
+        for (int i = 1; i * i <= num; i++)
+        {
+            if (num % i == 0)
+            {
+                count++;
+                if (num / i != i) count++;
+            }
+        }
+        return count == 2;
+    }
+}
+
+public class CheckPrime
+{
+    public static void Main()
+    {
+        int num = 4;
+        bool isPrime = FindPrime.IsPrime(num);
+
+        Console.WriteLine(isPrime ? $"{num} is Prime" : $"{num} is not a Prime");
+    }
+}
