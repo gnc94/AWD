@@ -1,0 +1,18 @@
+using System;
+
+class IPLTeam
+{
+    public static void Main()
+    {
+        Console.Write("Enter Team Number (1-3): ");
+        int team = int.Parse(Console.ReadLine());
+
+        switch (team)
+        {
+            case 1: Console.WriteLine("Mumbai Indians"); break;
+            case 2: Console.WriteLine("Chennai Super Kings"); break;
+            case 3: Console.WriteLine("Royal Challengers Bangalore"); break;
+            default: Console.WriteLine("Invalid Team Number"); break;
+        }
+    }
+}
