@@ -1,0 +1,20 @@
+using System;
+
+class Test
+{
+    public static void Main(string[] args)
+    {
+        int[] num = { 1, 2, 3, 4, 5, 6 };
+
+        try
+        {
+            Console.WriteLine(num[0]);
+            Console.WriteLine(num[55]);   // Out of range
+            Console.WriteLine(num[2] / 0); // Divide by zero
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine(e.Message);
+        }
+    }
+}
