@@ -1,0 +1,18 @@
+using System;
+
+public class RevNum
+{
+    public static void Main()
+    {
+        int num = 12345, rev = 0;
+
+        while (num != 0)
+        {
+            int lastNum = num % 10;
+            rev = (rev * 10) + lastNum;
+            num /= 10;
+        }
+
+        Console.WriteLine(rev);
+    }
+}
