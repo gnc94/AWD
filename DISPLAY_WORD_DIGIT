@@ -1,0 +1,13 @@
+using System;
+
+public class Class1
+{
+    public static void Main(string[] args)
+    {
+        Console.Write("Enter your number b/w 0 to 9: ");
+        int n = int.Parse(Console.ReadLine());
+
+        string[] str = { "zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine" };
+        Console.WriteLine(str[n]);
+    }
+}
