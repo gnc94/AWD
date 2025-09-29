@@ -1,0 +1,25 @@
+namespace MyNameSpace;
+using MyNameSpace;
+
+class Dept
+{
+    public void show()
+    {
+        Console.WriteLine("This is from dept class MyNameSpace namespace");
+    }
+
+    public void getFun()
+    {
+        Console.WriteLine("getFun from dept class MyNameSpace namespace");
+    }
+}
+
+public class SingleNameSpace
+{
+    public static void Main(string[] args)
+    {
+        Dept dept = new Dept();
+        dept.show();
+        dept.getFun();
+    }
+}
