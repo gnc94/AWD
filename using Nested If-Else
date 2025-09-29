@@ -1,0 +1,33 @@
+using System;
+
+public class Test
+{
+    public static void Main()
+    {
+        int number = 60;
+
+        if (number >= 35)
+        {
+            if (number > 75)
+            {
+                Console.WriteLine("A");
+            }
+            else if (number > 60)
+            {
+                Console.WriteLine("B");
+            }
+            else if (number > 45)
+            {
+                Console.WriteLine("C");
+            }
+            else
+            {
+                Console.WriteLine("D");
+            }
+        }
+        else
+        {
+            Console.WriteLine("F");
+        }
+    }
+}
