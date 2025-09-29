@@ -1,0 +1,19 @@
+using System;
+
+class Test
+{
+    public static void Main(string[] args)
+    {
+        int[] nums = { 1, 2, 3, 4, 5, 6, 7 };
+
+        try
+        {
+            Console.WriteLine("First Element is: " + nums[0]);
+            Console.WriteLine(nums[50]);   // Out of range
+        }
+        catch (IndexOutOfRangeException e)
+        {
+            Console.WriteLine(e.Message);
+        }
+    }
+}
