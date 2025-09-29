@@ -1,0 +1,26 @@
+// Windows Forms Application
+using System;
+using System.Windows.Forms;
+
+namespace WindowsForm
+{
+    public partial class Form1 : Form
+    {
+        public Form1()
+        {
+            InitializeComponent();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            string inputStr = inputText.Text;
+            string revStr = "";
+
+            for (int i = inputStr.Length - 1; i >= 0; i--)
+            {
+                revStr += inputStr[i];
+            }
+            inputText.Text = revStr;
+        }
+    }
+}
