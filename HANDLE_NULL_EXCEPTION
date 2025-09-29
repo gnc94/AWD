@@ -1,0 +1,17 @@
+using System;
+
+class Test
+{
+    public static void Main(string[] args)
+    {
+        try
+        {
+            string str = null;
+            int? length = str?.Length;    // Safe navigation (no exception)
+        }
+        catch (NullReferenceException e)
+        {
+            Console.WriteLine(e.Message);
+        }
+    }
+}
