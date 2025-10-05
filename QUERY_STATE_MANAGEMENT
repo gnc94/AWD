@@ -35,3 +35,32 @@
     </form>
 </body>
 </html>
+//
+
+using System;
+
+namespace QueryStringDemo
+{
+    public partial class Login : System.Web.UI.Page
+    {
+        protected void Page_Load(object sender, EventArgs e)
+        {
+        }
+
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+            string user = TextBox1.Text;
+            string pass = TextBox2.Text;
+
+            if (user == "Rehman" && pass == "112233")
+            {
+                // Redirect to Welcome.aspx with username in query string
+                Response.Redirect("Welcome.aspx?name=" + TextBox1.Text);
+            }
+            else
+            {
+                Label3.Text = "Username or Password Invalid!";
+            }
+        }
+    }
+}
