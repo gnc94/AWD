@@ -1,0 +1,47 @@
+InArmstrong.aspx
+<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Armstrong.aspx.cs" Inherits="ArmstrongWebApp.Armstrong" %>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>Armstrong Number Checker</title>
+</head>
+<body style="text-align:center; font-family: Arial; margin-top:50px;">
+    <form id="form1" runat="server">
+        <h2>Check Armstrong Number</h2>
+        <asp:Label ID="lblNumber" runat="server" Text="Enter Number:"></asp:Label>
+        <asp:TextBox ID="txtNumber" runat="server"></asp:TextBox>
+        <br /><br />
+        <asp:Button ID="btnCheck" runat="server" Text="Check" OnClick="btnCheck_Click" />
+        <br /><br />
+        <asp:TextBox ID="txtResult" runat="server" ReadOnly="true" Width="250px"></asp:TextBox>
+    </form>
+</body>
+</html>
+In ArmStrong.aspx.cs
+using System;
+namespace ArmstrongWebApp{
+ public partial class Armstrong : System.Web.UI.Page{
+        protected void Page_Load(object sender, EventArgs e){
+        }
+        protected void btnCheck_Click(object sender, EventArgs e){
+            int number, sum = 0;
+            if (int.TryParse(txtNumber.Text, out number)){
+                int temp = number;
+                int digits = number.ToString().Length;
+                while (temp > 0){
+                    int rem = temp % 10;
+                    sum += (int)Math.Pow(rem, digits);
+                    temp /= 10;
+                }
+                if (sum == number)
+                    txtResult.Text = number + " is an Armstrong Number";
+                else
+                    txtResult.Text = number + " is NOT an Armstrong Number";
+            }
+            else{
+                txtResult.Text = "Please enter a valid number!";
+            }
+        }
+    }
+}
