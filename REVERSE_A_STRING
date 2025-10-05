@@ -1,17 +1,15 @@
 using System;
-
-public class RevStr
+public class ReverseString
 {
-    public static void Main()
+    public static void Main(string[] args)
     {
-        string str = "Hello World!";
-        string rev = "";
-
+        Console.WriteLine("Enter a string:");
+        string str = Console.ReadLine();
+        string reversed = "";
         for (int i = str.Length - 1; i >= 0; i--)
         {
-            rev += str[i];
+            reversed += str[i];
         }
-
-        Console.WriteLine(rev);
+        Console.WriteLine($"Reversed string: {reversed}");
     }
 }
