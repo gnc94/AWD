@@ -1,0 +1,37 @@
+In Default.aspx
+<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="ServerControlsDemo.Default" %>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>Server Controls Demo</title>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <asp:TextBox ID="TextBox1" runat="server" Height="25" AutoPostBack="True"></asp:TextBox>
+        <asp:Button ID="Button1" runat="server" Text="Click" ForeColor="White" BackColor="DarkSlateGray" 
+                    OnClick="Button1_Click" Height="30" Width="50" BorderStyle="Groove" />
+        <br /><br />
+        <asp:Label ID="Label1" runat="server" ForeColor="Green"></asp:Label>
+    </form>
+</body>
+</html>
+
+
+
+
+
+
+
+In Default.aspx.cs
+using System;
+namespace ServerControlsDemo{
+    public partial class Default : System.Web.UI.Page{
+        protected void Page_Load(object sender, EventArgs e){
+            TextBox1.Focus();
+  }
+        protected void Button1_Click(object sender, EventArgs e){
+            // Display Hello + input text
+            Label1.Text = "HELLO " + TextBox1.Text;
+        }
+    }
+}
