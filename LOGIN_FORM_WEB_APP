@@ -1,0 +1,47 @@
+In Login.aspx
+<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Login.aspx.cs" Inherits="LoginWebApp.Login" %>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>Login Page</title>
+</head>
+<body style="text-align:center; font-family: Arial;">
+    <form id="form1" runat="server">
+        <h2>Login Form</h2>
+        <asp:Label ID="lblUser" runat="server" Text="Username:"></asp:Label>
+        <asp:TextBox ID="txtUser" runat="server"></asp:TextBox>
+        <br /><br />
+        <asp:Label ID="lblPass" runat="server" Text="Password:"></asp:Label>
+        <asp:TextBox ID="txtPass" runat="server" TextMode="Password"></asp:TextBox>
+        <br /><br />
+        <asp:Button ID="btnLogin" runat="server" Text="Login" OnClick="btnLogin_Click" />
+        <br /><br />
+        <asp:Label ID="lblMessage" runat="server" ForeColor="Red"></asp:Label>
+    </form>
+</body>
+</html>
+
+
+
+
+In Login.aspx.cs
+using System;
+namespace LoginWebApp{
+    public partial class Login : System.Web.UI.Page{
+        protected void Page_Load(object sender, EventArgs e){
+}
+protected void btnLogin_Click(object sender, EventArgs e)
+        {
+            string user = txtUser.Text;
+            string password = txtPass.Text;
+            if (user == "Surya Jaiswar" && password == "72083"){
+                lblMessage.ForeColor = System.Drawing.Color.Green;
+                lblMessage.Text = "Login Successful!";}
+            else{
+                lblMessage.ForeColor = System.Drawing.Color.Red;
+                lblMessage.Text = "Invalid Username or Password!";
+            }
+        }
+    }
+}
