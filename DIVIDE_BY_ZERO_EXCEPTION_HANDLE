@@ -1,0 +1,19 @@
+using System;
+class exception
+{
+    public static void Main()
+    {
+        try
+        {
+            Console.WriteLine("Enter First Number:");
+            int num1 = int.Parse(Console.ReadLine());
+            Console.WriteLine("Enter Second Number:");
+            int num2 = int.Parse(Console.ReadLine());
+            int result = num1 / num2;
+        }
+        catch (DivideByZeroException exe)
+        {
+            Console.WriteLine(exe.Message);
+        }
+    }
+}
