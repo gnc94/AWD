@@ -1,0 +1,49 @@
+In Query.aspx
+<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Login.aspx.cs" Inherits="QueryStringDemo.Login" %>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>Query String Demo - Login</title>
+</head>
+<body style="text-align:center; font-family: Arial; margin-top:50px;">
+    <form id="form1" runat="server">
+        <asp:Label ID="Label1" runat="server" Text="Username"></asp:Label><br/>
+        <asp:TextBox ID="TextBox1" runat="server" ></asp:TextBox><br/><br/>
+        
+        <asp:Label ID="Label2" runat="server" Text="Password"></asp:Label><br/>
+        <asp:TextBox ID="TextBox2" runat="server" TextMode="Password"></asp:TextBox><br/><br/>
+        
+        <asp:Button ID="Button1" runat="server" Text="LOGIN" OnClick="Button1_Click" /><br/><br/>
+        <asp:Label ID="Label3" runat="server" ForeColor="Red" Font-Size="Large"></asp:Label>
+    </form>
+</body>
+</html>
+ In Query.aspx.cs
+using System;
+
+namespace QueryStringDemo
+{
+    public partial class Login : System.Web.UI.Page
+    {
+        protected void Page_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+            string user = TextBox1.Text;
+            string pass = TextBox2.Text;
+
+            if (user == "Surya" && pass == "72083")
+            {
+                // Redirect to Welcome page with query string
+                Response.Redirect("Welcome.aspx?name=" + TextBox1.Text);
+            }
+            else{
+                Label3.Text = "Username or Password Invalid!";
+            }
+        }
+    }
+}
