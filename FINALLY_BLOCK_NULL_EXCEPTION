@@ -1,0 +1,15 @@
+using System;
+class exception{
+    public static void Main(){
+        try{
+            string str = null;
+            int str1 = str.Length;
+        }
+        catch (NullReferenceException exe){
+            Console.WriteLine(exe.Message);
+        }
+        finally{
+            Console.WriteLine("The Finally Block is Executed!!");
+        }
+    }
+}
