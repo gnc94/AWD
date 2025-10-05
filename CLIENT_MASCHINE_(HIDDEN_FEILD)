@@ -1,0 +1,45 @@
+In hidden.aspx
+<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="WebForm1.aspx.cs" Inherits="HiddenFieldDemo.WebForm1" %>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>Hidden Field Demo</title>
+</head>
+<body style="text-align:center; font-family: Arial; margin-top:50px;">
+    <form id="form1" runat="server">
+        <asp:Button ID="Button1" runat="server" Text="Click" OnClick="Button1_Click" />
+        <asp:HiddenField ID="HiddenField1" runat="server"  Value="0"/>
+        <br /><br />
+        <asp:Label ID="Label1" runat="server" ForeColor="Green"></asp:Label>
+    </form>
+</body>
+</html>
+In hidden.aspx.cs
+using System;
+
+namespace HiddenFieldDemo
+{
+    public partial class WebForm1 : System.Web.UI.Page
+    {
+        protected void Page_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+            // Read value from HiddenField
+            int count = int.Parse(HiddenField1.Value);
+
+            // Increment count
+            count += 1;
+
+            // Display count in Label
+            Label1.Text = "Count: " + count;
+
+            // Store updated count back in HiddenField
+            HiddenField1.Value = count.ToString();
+        }
+    }
+}
